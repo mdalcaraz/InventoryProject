@@ -1,0 +1,88 @@
+# -------------------------
+# Carpetas que NO deben subirse (binarios, compilados, temporales)
+# -------------------------
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.VC.VC.opendb
+*.suo
+*.user
+*.userprefs
+*.opensdf
+*.sdf
+*.cache
+*.log
+*.tlog
+
+# -------------------------
+# Archivos de compilación C++
+# -------------------------
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
+*.app
+*.ipa
+*.dSYM
+
+# -------------------------
+# Archivos de Build y Proyecto temporales
+# -------------------------
+Build/*
+!Build/**/*.cs # Conserva scripts de build de C#
+
+# -------------------------
+# Archivos de configuración específicos del IDE
+# -------------------------
+.vs/
+.idea/
+*.xcodeproj
+*.xcworkspace
+
+# -------------------------
+# Archivos del motor (NO incluir Engine en repositorio)
+# -------------------------
+Engine/
+
+# -------------------------
+# Carpetas opcionales de plataformas
+# -------------------------
+WindowsNoEditor/
+Windows/
+LinuxNoEditor/
+Linux/
+MacNoEditor/
+Mac/
+
+# -------------------------
+# Plugins temporales (compilados)
+# -------------------------
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+Plugins/*/DerivedDataCache/
+
+# -------------------------
+# Archivos de AutoSave y Backup
+# -------------------------
+*.autosave
+*.backup
+*.bak
+
+# -------------------------
+# Archivos de caché de shaders y derivados
+# -------------------------
+*.ushaderbytecode
+*.uasset.tmp
+*.umap.tmp
+
+# -------------------------
+# Excepciones: QUÉ SI SUBIR
+# -------------------------
+!Source/**            # Código fuente
+!Config/**            # Configuración del proyecto
+!Content/**           # Assets y Blueprints
+!Plugins/**           # Código fuente y contenido de plugins
+!*.uproject           # Archivo del proyecto
