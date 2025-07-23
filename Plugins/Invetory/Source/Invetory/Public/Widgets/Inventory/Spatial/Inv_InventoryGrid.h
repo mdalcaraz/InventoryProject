@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "Types/Inv_GridTypes.h"
 #include "Inv_InventoryGrid.generated.h"
+struct FInv_ItemManifest;
+class UInv_ItemComponent;
 class UInv_InventoryComponent;
 class UInv_GridSlot;
 class UCanvasPanel;
@@ -19,6 +21,7 @@ class INVETORY_API UInv_InventoryGrid : public UUserWidget
 public:
 	virtual void NativeOnInitialized() override;
 	EInv_ItemCategory GetItemCategory() const { return ItemCategory; }
+	FInv_SlotAvailabilityResult HasRoomForItem(const UInv_ItemComponent* ItemComponent);
 
 	UFUNCTION()
 	void AddItem(UInv_InventoryItem* Item);
@@ -29,6 +32,10 @@ private:
 	
 	void ConstructGrid();
 
+	FInv_SlotAvailabilityResult HasRoomForItem(const UInv_InventoryItem* Item);
+	FInv_SlotAvailabilityResult HasRoomForItem(const FInv_ItemManifest& Manifest);
+	void AddItemToIndices(const FInv_SlotAvailabilityResult& SlotAvailabilityResult, UInv_InventoryItem* NewItem);
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"),Category="Inventory")
 	EInv_ItemCategory ItemCategory;
 
