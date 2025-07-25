@@ -8,6 +8,7 @@
 class UInv_ItemComponent;
 class UInv_InventoryComponent;
 class UInv_InventoryItem;
+struct FGameplayTag;
 
 /* A Single entry in an Inventory */
 USTRUCT(BlueprintType)
@@ -50,6 +51,7 @@ public:
 	UInv_InventoryItem* AddEntry(UInv_ItemComponent* ItemComponent);
 	UInv_InventoryItem* AddEntry(UInv_InventoryItem* Item);
 	void RemoveEntry(UInv_InventoryItem* Item);
+	UInv_InventoryItem* FindFirstItemByType(const FGameplayTag& ItemType);
 	
 	
 private:

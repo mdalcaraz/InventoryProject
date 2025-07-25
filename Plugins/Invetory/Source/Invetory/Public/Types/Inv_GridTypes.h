@@ -35,7 +35,7 @@ struct FInv_SlotAvailabilityResult
 
 	FInv_SlotAvailabilityResult() {}
 
-	TWeakObjectPtr<UInv_InventoryItem*> Item;
+	TWeakObjectPtr<UInv_InventoryItem> Item;
 
 	int32 TotalRoomToFill{0};
 	int32 Remainder{0};
